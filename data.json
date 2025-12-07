@@ -1,0 +1,529 @@
+{
+    "sanctuaries": [
+        {
+            "id": 1,
+            "color": "yellow",
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 2,
+            "phase": "day",
+            "color": "blue",
+            "is_map": true
+        },
+        {
+            "id": 3,
+            "phase": "day",
+            "power": {
+                "conditions": [
+                    "map"
+                ],
+                "point": 1
+            },
+            "ressources": [
+                "calf"
+            ]
+        },
+        {
+            "id": 4,
+            "power": {
+                "conditions": [
+                    "fruit"
+                ],
+                "point": 1
+            },
+            "ressources": [
+                "fruit"
+            ]
+        },
+        {
+            "id": 5,
+            "power": {
+                "conditions": ["rock"],
+                "point": 1
+            },
+            "ressources":["rock"]
+        },
+        {
+            "id": 6,
+            "color": "red",
+            "power": {
+                "conditions": ["red"],
+                "point": 1
+            }
+        },
+        {
+            "id": 7,
+            "is_map": true,
+            "power": {
+                "conditions": ["multi"],
+                "point": 4
+            }
+        },
+        {
+            "id": 8,
+            "is_map": true,
+            "ressources": [
+                "fruit"
+            ]
+        },
+        {
+            "id": 9,
+            "phase": "day",
+            "power": {
+                "conditions": [
+                    "green",
+                    "blue"
+                ],
+                "point": 1
+            },
+            "ressources": [
+                "calf"
+            ]
+        },
+        {
+            "id": 10,
+            "phase": "night",
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 11,
+            "color": "green",
+            "ressources": ["calf"]
+        },
+        {
+            "id": 12,
+            "color": "yellow",
+            "power": {
+                "conditions": [
+                    "map"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 13,
+            "power": {
+                "conditions": ["fruit"],
+                "point": 2
+            }
+        },
+        {
+            "id": 14,
+            "power": {
+                "conditions": ["green","red"],
+                "point": 1
+            }
+        },
+        {
+            "id": 15,
+            "color":"blue",
+            "ressources": ["rock"]
+        },
+        {
+            "id": 16,
+            "is_map":true,
+            "color":"green"
+        },
+        {
+            "id": 17,
+            "is_map": true,
+            "power": {
+                "conditions": [
+                    "map"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 18,
+            "color": "green",
+            "power": {
+                "conditions": [
+                    "green"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 19,
+            "color":"yellow",
+            "power": {
+                "conditions": [
+                    "multi"
+                ],
+                "point": 4
+            }
+        },
+        {
+            "id": 20,
+            "is_map":true,
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 21,
+            "is_map":true,
+            "ressources": [
+                "calf"
+            ]
+        },
+        {
+            "id": 22,
+            "power": {
+                "conditions": [
+                    "map"
+                ],
+                "point": 1
+            },
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 23,
+            "power": {
+                "conditions": [
+                    "red", "blue"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 24,
+            "power": {
+                "conditions": [
+                    "yellow", "green"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 25,
+            "color":"red",
+            "ressources": [
+                "fruit"
+            ]
+        },
+        {
+            "id": 26,
+            "phase": "night"
+        },
+        {
+            "id": 27,
+            "color":"red",
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 28,
+            "color":"yellow",
+            "is_map":true
+        },
+        {
+            "id": 29,
+            "power": {
+                "conditions": [
+                    "red","yellow"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 30,
+            "phase": "night",
+            "ressources": [
+                "fruit"
+            ]
+        },
+        {
+            "id": 31,
+            "power": {
+                "conditions": [
+                    "rock"
+                ],
+                "point": 2
+            }
+        },
+        {
+            "id": 32,
+            "color":"green",
+            "power": {
+                "conditions": [
+                    "night"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 33,
+            "color":"yellow",
+            "power": {
+                "conditions": [
+                    "yellow"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 34,
+            "power": {
+                "conditions": [
+                    "map"
+                ],
+                "point": 2
+            }
+        },
+        {
+            "id": 35,
+            "phase": "night",
+            "ressources": [
+                "calf"
+            ]
+        },
+        {
+            "id": 36,
+            "power": {
+                "conditions": [
+                    "animal"
+                ],
+                "point": 2
+            }
+        },
+        {
+            "id": 37,
+            "power": {
+                "one_time": 5
+            }
+        },
+        {
+            "id": 38,
+            "color":"blue",
+            "power": {
+                "conditions": [
+                    "blue"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 39,
+            "power": {
+                "conditions": [
+                    "night"
+                ],
+                "point": 1
+            },
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 40,
+            "power": {
+                "conditions": [
+                    "blue", "yellow"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 41,
+            "color":"red",
+            "ressources": [
+                "calf"
+            ]
+        },
+        {
+            "id": 42,
+            "color":"blue",
+            "ressources": [
+                "fruit"
+            ]
+        },
+        {
+            "id": 43,
+            "color":"blue",
+            "ressources": [
+                "calf"
+            ]
+        },
+        {
+            "id": 44,
+            "color":"green",
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 45,
+            "power": {
+                "conditions": [
+                    "animal"
+                ],
+                "point": 1
+            },
+            "ressources": [
+                "calf"
+            ]
+        }
+    ],
+    "territories": [
+        {
+            "id": 6,
+            "phase": "day",
+            "is_map": true,
+            "color": "blue",
+            "requirements": [],
+            "power": null,
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 7,
+            "phase": "day",
+            "is_map": false,
+            "color": "red",
+            "requirements": [],
+            "power": null,
+            "ressources": [
+                "animal",
+                "fruit"
+            ]
+        },
+        {
+            "id": 10,
+            "phase": "day",
+            "is_map": true,
+            "color": "red",
+            "requirements": [],
+            "power": {
+                "conditions": [
+                    "night"
+                ],
+                "point": 3
+            }
+        },
+        {
+            "id": 22,
+            "phase": "night",
+            "is_map": true,
+            "color": "green",
+            "requirements": [],
+            "power": {
+                "conditions": [
+                    "map"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 27,
+            "phase": "night",
+            "is_map": false,
+            "color": "yellow",
+            "requirements": [],
+            "power": {
+                "conditions": [
+                    "yellow",
+                    "blue"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 30,
+            "phase": "night",
+            "is_map": false,
+            "color": "yellow",
+            "requirements": [],
+            "power": {
+                "conditions": [
+                    "rock"
+                ],
+                "point": 2
+            },
+            "ressources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 31,
+            "phase": "night",
+            "is_map": false,
+            "color": "yellow",
+            "requirements": [],
+            "power": {
+                "conditions": [
+                    "yellow",
+                    "red"
+                ],
+                "point": 1
+            }
+        },
+        {
+            "id": 34,
+            "phase": "night",
+            "is_map": false,
+            "color": "green",
+            "requirements": [
+                "rock",
+                "rock"
+            ],
+            "power": {
+                "conditions": [
+                    "animal",
+                    "animal"
+                ],
+                "point": 3
+            },
+            "ressources": [
+                "red"
+            ]
+        },
+        {
+            "id": 59,
+            "phase": "day",
+            "is_map": true,
+            "color": "yellow",
+            "requirements": [
+                "red",
+                "red",
+                "red",
+                "blue"
+            ],
+            "power": {
+                "conditions": [
+                    "yellow",
+                    "red"
+                ],
+                "point": 3
+            }
+        },
+        {
+            "id": 65,
+            "phase": "day",
+            "is_map": true,
+            "color": "yellow",
+            "requirements": [
+                "yellow",
+                "yellow",
+                "yellow"
+            ],
+            "power": {
+                "conditions": [
+                    "yellow",
+                    "green"
+                ],
+                "point": 3
+            }
+        }
+    ]
+}
