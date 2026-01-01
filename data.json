@@ -3,7 +3,7 @@
         {
             "id": 1,
             "color": "yellow",
-            "ressources": [
+            "resources": [
                 "rock"
             ]
         },
@@ -20,10 +20,10 @@
                 "conditions": [
                     "map"
                 ],
-                "point": 1
+                "points": 1
             },
-            "ressources": [
-                "calf"
+            "resources": [
+                "animal"
             ]
         },
         {
@@ -32,40 +32,48 @@
                 "conditions": [
                     "fruit"
                 ],
-                "point": 1
+                "points": 1
             },
-            "ressources": [
+            "resources": [
                 "fruit"
             ]
         },
         {
             "id": 5,
             "power": {
-                "conditions": ["rock"],
-                "point": 1
+                "conditions": [
+                    "rock"
+                ],
+                "points": 1
             },
-            "ressources":["rock"]
+            "ressources": [
+                "rock"
+            ]
         },
         {
             "id": 6,
             "color": "red",
             "power": {
-                "conditions": ["red"],
-                "point": 1
+                "conditions": [
+                    "red"
+                ],
+                "points": 1
             }
         },
         {
             "id": 7,
             "is_map": true,
             "power": {
-                "conditions": ["multi"],
-                "point": 4
+                "conditions": [
+                    "multi"
+                ],
+                "points": 4
             }
         },
         {
             "id": 8,
             "is_map": true,
-            "ressources": [
+            "resources": [
                 "fruit"
             ]
         },
@@ -77,23 +85,25 @@
                     "green",
                     "blue"
                 ],
-                "point": 1
+                "points": 1
             },
-            "ressources": [
-                "calf"
+            "resources": [
+                "animal"
             ]
         },
         {
             "id": 10,
             "phase": "night",
-            "ressources": [
+            "resources": [
                 "rock"
             ]
         },
         {
             "id": 11,
             "color": "green",
-            "ressources": ["calf"]
+            "resources": [
+                "animal"
+            ]
         },
         {
             "id": 12,
@@ -102,32 +112,39 @@
                 "conditions": [
                     "map"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 13,
             "power": {
-                "conditions": ["fruit"],
-                "point": 2
+                "conditions": [
+                    "fruit"
+                ],
+                "points": 2
             }
         },
         {
             "id": 14,
             "power": {
-                "conditions": ["green","red"],
-                "point": 1
+                "conditions": [
+                    "green",
+                    "red"
+                ],
+                "points": 1
             }
         },
         {
             "id": 15,
-            "color":"blue",
-            "ressources": ["rock"]
+            "color": "blue",
+            "resources": [
+                "rock"
+            ]
         },
         {
             "id": 16,
-            "is_map":true,
-            "color":"green"
+            "is_map": true,
+            "color": "green"
         },
         {
             "id": 17,
@@ -136,7 +153,7 @@
                 "conditions": [
                     "map"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
@@ -146,31 +163,31 @@
                 "conditions": [
                     "green"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 19,
-            "color":"yellow",
+            "color": "yellow",
             "power": {
                 "conditions": [
                     "multi"
                 ],
-                "point": 4
+                "points": 4
             }
         },
         {
             "id": 20,
-            "is_map":true,
-            "ressources": [
+            "is_map": true,
+            "resources": [
                 "rock"
             ]
         },
         {
             "id": 21,
-            "is_map":true,
-            "ressources": [
-                "calf"
+            "is_map": true,
+            "resources": [
+                "animal"
             ]
         },
         {
@@ -179,9 +196,9 @@
                 "conditions": [
                     "map"
                 ],
-                "point": 1
+                "points": 1
             },
-            "ressources": [
+            "resources": [
                 "rock"
             ]
         },
@@ -189,24 +206,26 @@
             "id": 23,
             "power": {
                 "conditions": [
-                    "red", "blue"
+                    "red",
+                    "blue"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 24,
             "power": {
                 "conditions": [
-                    "yellow", "green"
+                    "yellow",
+                    "green"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 25,
-            "color":"red",
-            "ressources": [
+            "color": "red",
+            "resources": [
                 "fruit"
             ]
         },
@@ -216,29 +235,30 @@
         },
         {
             "id": 27,
-            "color":"red",
-            "ressources": [
+            "color": "red",
+            "resources": [
                 "rock"
             ]
         },
         {
             "id": 28,
-            "color":"yellow",
-            "is_map":true
+            "color": "yellow",
+            "is_map": true
         },
         {
             "id": 29,
             "power": {
                 "conditions": [
-                    "red","yellow"
+                    "red",
+                    "yellow"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 30,
             "phase": "night",
-            "ressources": [
+            "resources": [
                 "fruit"
             ]
         },
@@ -248,27 +268,27 @@
                 "conditions": [
                     "rock"
                 ],
-                "point": 2
+                "points": 2
             }
         },
         {
             "id": 32,
-            "color":"green",
+            "color": "green",
             "power": {
                 "conditions": [
                     "night"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 33,
-            "color":"yellow",
+            "color": "yellow",
             "power": {
                 "conditions": [
                     "yellow"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
@@ -277,14 +297,14 @@
                 "conditions": [
                     "map"
                 ],
-                "point": 2
+                "points": 2
             }
         },
         {
             "id": 35,
             "phase": "night",
-            "ressources": [
-                "calf"
+            "resources": [
+                "animal"
             ]
         },
         {
@@ -293,7 +313,7 @@
                 "conditions": [
                     "animal"
                 ],
-                "point": 2
+                "points": 2
             }
         },
         {
@@ -304,12 +324,12 @@
         },
         {
             "id": 38,
-            "color":"blue",
+            "color": "blue",
             "power": {
                 "conditions": [
                     "blue"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
@@ -318,9 +338,9 @@
                 "conditions": [
                     "night"
                 ],
-                "point": 1
+                "points": 1
             },
-            "ressources": [
+            "resources": [
                 "rock"
             ]
         },
@@ -328,36 +348,37 @@
             "id": 40,
             "power": {
                 "conditions": [
-                    "blue", "yellow"
+                    "blue",
+                    "yellow"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 41,
-            "color":"red",
-            "ressources": [
-                "calf"
+            "color": "red",
+            "resources": [
+                "animal"
             ]
         },
         {
             "id": 42,
-            "color":"blue",
-            "ressources": [
+            "color": "blue",
+            "resources": [
                 "fruit"
             ]
         },
         {
             "id": 43,
-            "color":"blue",
-            "ressources": [
-                "calf"
+            "color": "blue",
+            "resources": [
+                "animal"
             ]
         },
         {
             "id": 44,
-            "color":"green",
-            "ressources": [
+            "color": "green",
+            "resources": [
                 "rock"
             ]
         },
@@ -367,10 +388,10 @@
                 "conditions": [
                     "animal"
                 ],
-                "point": 1
+                "points": 1
             },
-            "ressources": [
-                "calf"
+            "resources": [
+                "animal"
             ]
         }
     ],
@@ -382,7 +403,7 @@
             "color": "blue",
             "requirements": [],
             "power": null,
-            "ressources": [
+            "resources": [
                 "rock"
             ]
         },
@@ -392,10 +413,9 @@
             "is_map": false,
             "color": "red",
             "requirements": [],
-            "power": null,
-            "ressources": [
-                "animal",
-                "fruit"
+            "resources": [
+                "fruit",
+                "animal"
             ]
         },
         {
@@ -408,7 +428,7 @@
                 "conditions": [
                     "night"
                 ],
-                "point": 3
+                "points": 3
             }
         },
         {
@@ -421,7 +441,7 @@
                 "conditions": [
                     "map"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
@@ -435,22 +455,22 @@
                     "yellow",
                     "blue"
                 ],
-                "point": 1
+                "points": 1
             }
         },
         {
             "id": 30,
             "phase": "night",
             "is_map": false,
-            "color": "yellow",
+            "color": "red",
             "requirements": [],
             "power": {
                 "conditions": [
                     "rock"
                 ],
-                "point": 2
+                "points": 2
             },
-            "ressources": [
+            "resources": [
                 "rock"
             ]
         },
@@ -465,8 +485,9 @@
                     "yellow",
                     "red"
                 ],
-                "point": 1
-            }
+                "points": 1
+            },
+            "resources": []
         },
         {
             "id": 34,
@@ -479,13 +500,12 @@
             ],
             "power": {
                 "conditions": [
-                    "animal",
                     "animal"
                 ],
-                "point": 3
+                "points": 3
             },
-            "ressources": [
-                "red"
+            "resources": [
+                "animal"
             ]
         },
         {
@@ -494,17 +514,17 @@
             "is_map": true,
             "color": "yellow",
             "requirements": [
-                "red",
-                "red",
-                "red",
-                "blue"
+                "animal",
+                "animal",
+                "animal",
+                "rock"
             ],
             "power": {
                 "conditions": [
                     "yellow",
                     "red"
                 ],
-                "point": 3
+                "points": 3
             }
         },
         {
@@ -522,8 +542,577 @@
                     "yellow",
                     "green"
                 ],
-                "point": 3
+                "points": 3
             }
+        },
+        {
+            "id": 50,
+            "color": "yellow",
+            "resources": [
+                "rock"
+            ],
+            "power": {
+                "points": 4
+            }
+        },
+        {
+            "id": 47,
+            "color": "yellow"
+        },
+        {
+            "id": 8,
+            "color": "green",
+            "resources": [
+                "animal"
+            ]
+        },
+        {
+            "id": 48,
+            "color": "red",
+            "resources": [
+                "animal"
+            ]
+        },
+        {
+            "id": 23,
+            "color": "red",
+            "phase": "night",
+            "resources": [
+                "rock",
+                "animal"
+            ]
+        },
+        {
+            "id": 15,
+            "color": "green",
+            "is_map": true
+        },
+        {
+            "id": 63,
+            "color": "green",
+            "is_map": true
+        },
+        {
+            "id": 26,
+            "color": "red",
+            "phase": "night",
+            "resources": [
+                "animal"
+            ],
+            "power": {
+                "points": 3
+            }
+        },
+        {
+            "id": 43,
+            "color": "blue",
+            "resources": [
+                "rock"
+            ],
+            "power": {
+                "conditions": [
+                    "multi"
+                ],
+                "points": 10
+            }
+        },
+        {
+            "id": 18,
+            "color": "green",
+            "resources": [
+                "animal"
+            ],
+            "power": {
+                "conditions": [
+                    "multi"
+                ],
+                "points": 10
+            }
+        },
+        {
+            "id": 13,
+            "color": "blue",
+            "power": {
+                "points": 2
+            }
+        },
+        {
+            "id": 61,
+            "color": "green",
+            "resources": [
+                "fruit"
+            ],
+            "power": {
+                "points": 17
+            }
+        },
+        {
+            "id": 24,
+            "resources": [
+                "rock"
+            ],
+            "color": "blue",
+            "phase": "night",
+            "power": {
+                "points": 2
+            }
+        },
+        {
+            "id": 35,
+            "phase": "night",
+            "resources": [
+                "animal"
+            ],
+            "power": {
+                "points": 10
+            },
+            "color": "yellow"
+        },
+        {
+            "id": 41,
+            "resources": [
+                "fruit"
+            ],
+            "power": {
+                "points": 4
+            },
+            "color": "green"
+        },
+        {
+            "id": 29,
+            "phase": "night",
+            "resources": [
+                "fruit"
+            ],
+            "color": "yellow",
+            "power": {
+                "points": 2
+            }
+        },
+        {
+            "id": 17,
+            "resources": [
+                "rock"
+            ],
+            "power": {
+                "points": 3
+            },
+            "color": "blue"
+        },
+        {
+            "id": 9,
+            "color": "blue",
+            "power": {
+                "points": 5
+            }
+        },
+        {
+            "id": 11,
+            "color": "green",
+            "power": {
+                "points": 2,
+                "conditions": [
+                    "map"
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "color": "yellow",
+            "resources": [
+                "fruit"
+            ],
+            "is_map": true
+        },
+        {
+            "id": 14,
+            "color": "red",
+            "resources": [
+                "fruit"
+            ],
+            "power": {
+                "points": 2,
+                "conditions": [
+                    "night"
+                ]
+            }
+        },
+        {
+            "id": 19,
+            "resources": [
+                "fruit"
+            ],
+            "color": "red",
+            "power": {
+                "points": 2,
+                "conditions": [
+                    "fruit"
+                ]
+            }
+        },
+        {
+            "id": 21,
+            "color": "blue",
+            "phase": "night",
+            "power": {
+                "points": 8
+            }
+        },
+        {
+            "id": 16,
+            "color": "green"
+        },
+        {
+            "id": 20,
+            "color": "green",
+            "phase": "night",
+            "is_map": true,
+            "requirements": [
+                "rock"
+            ],
+            "power": {
+                "points": 2,
+                "conditions": [
+                    "night"
+                ]
+            }
+        },
+        {
+            "id": 25,
+            "phase": "night",
+            "color": "yellow",
+            "power": {
+                "points": 1
+            }
+        },
+        {
+            "id": 28,
+            "color": "red",
+            "resources": [
+                "rock"
+            ],
+            "phase": "night",
+            "power": {
+                "points": 3
+            }
+        },
+        {
+            "id": 32,
+            "color": "red",
+            "phase": "night",
+            "resources": [
+                "rock",
+                "animal"
+            ],
+            "power": {
+                "points": 7
+            }
+        },
+        {
+            "id": 33,
+            "phase": "night",
+            "color": "yellow",
+            "is_map": true,
+            "power": {
+                "points": 3,
+                "conditions": [
+                    "fruit"
+                ]
+            }
+        },
+        {
+            "id": 36,
+            "color": "red",
+            "phase": "night",
+            "power": {
+                "points": 4,
+                "conditions": [
+                    "fruit"
+                ]
+            }
+        },
+        {
+            "id": 37,
+            "color": "yellow",
+            "phase": "night",
+            "power": {
+                "points": 3,
+                "conditions": [
+                    "night"
+                ]
+            },
+            "requirements": [
+                "fruit"
+            ]
+        },
+        {
+            "id": 38,
+            "color": "green",
+            "phase": "night",
+            "resources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 39,
+            "resources": [
+                "rock",
+                "fruit"
+            ],
+            "color": "red",
+            "phase": "night",
+            "power": {
+                "points": 9
+            },
+            "requirements": [
+                "animal",
+                "animal"
+            ]
+        },
+        {
+            "id": 40,
+            "phase": "night",
+            "color": "blue",
+            "power": {
+                "points": 3,
+                "conditions": [
+                    "night"
+                ]
+            },
+            "requirements": [
+                "rock",
+                "animal",
+                "fruit"
+            ]
+        },
+        {
+            "id": 42,
+            "color": "yellow",
+            "power": {
+                "points": 2,
+                "conditions": [
+                    "night"
+                ]
+            },
+            "requirements": [
+                "animal",
+                "rock"
+            ]
+        },
+        {
+            "id": 44,
+            "color": "yellow",
+            "power": {
+                "points": 2,
+                "conditions": [
+                    "rock"
+                ]
+            }
+        },
+        {
+            "id": 45,
+            "color": "green",
+            "resources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 46,
+            "color": "blue",
+            "is_map": true,
+            "power": {
+                "points": 10
+            }
+        },
+        {
+            "id": 49,
+            "color": "blue",
+            "power": {
+                "points": 12
+            },
+            "is_map": true
+        },
+        {
+            "id": 51,
+            "color": "blue",
+            "resources": [
+                "rock"
+            ]
+        },
+        {
+            "id": 52,
+            "color": "red",
+            "power": {
+                "points": 4,
+                "conditions": [
+                    "animal"
+                ]
+            }
+        },
+        {
+            "id": 53,
+            "color": "yellow",
+            "resources": [
+                "animal"
+            ],
+            "power": {}
+        },
+        {
+            "id": 54,
+            "resources": [
+                "animal"
+            ],
+            "requirements": [
+                "fruit",
+                "fruit"
+            ],
+            "color": "green",
+            "power": {
+                "points": 4,
+                "conditions": [
+                    "map"
+                ]
+            }
+        },
+        {
+            "id": 55,
+            "color": "blue",
+            "resources": [
+                "rock"
+            ],
+            "power": {
+                "points": 3,
+                "conditions": [
+                    "rock"
+                ]
+            },
+            "is_map": true,
+            "requirements": [
+                "fruit",
+                "fruit",
+                "animal"
+            ]
+        },
+        {
+            "id": 56,
+            "color": "yellow",
+            "resources": [
+                "fruit"
+            ],
+            "power": {
+                "points": 4,
+                "conditions": [
+                    "fruit"
+                ]
+            },
+            "requirements": [
+                "rock",
+                "animal",
+                "animal"
+            ]
+        },
+        {
+            "id": 57,
+            "color": "red",
+            "power": {
+                "points": 4,
+                "conditions": [
+                    "rock"
+                ]
+            }
+        },
+        {
+            "id": 58,
+            "color": "green",
+            "is_map": true,
+            "power": {
+                "points": 3
+            }
+        },
+        {
+            "id": 60,
+            "color": "blue",
+            "is_map": true,
+            "power": {
+                "points": 16
+            }
+        },
+        {
+            "id": 62,
+            "color": "yellow",
+            "is_map": true,
+            "power": {
+                "points": 3,
+                "conditions": [
+                    "yellow",
+                    "blue"
+                ]
+            },
+            "requirements": [
+                "fruit",
+                "fruit",
+                "fruit"
+            ]
+        },
+        {
+            "id": 64,
+            "color": "blue"
+        },
+        {
+            "id": 66,
+            "color": "blue",
+            "power": {
+                "points": 20
+            }
+        },
+        {
+            "id": 67,
+            "color": "green"
+        },
+        {
+            "id": 5,
+            "color": "green",
+            "power": {
+                "points": 2
+            },
+            "resources": [
+                "animal"
+            ]
+        },
+        {
+            "id": 4,
+            "color": "red",
+            "resources": [
+                "rock",
+                "fruit"
+            ]
+        },
+        {
+            "id": 3,
+            "color": "green",
+            "power": {
+                "points": 4
+            }
+        },
+        {
+            "id": 2,
+            "color": "blue",
+            "resources": [
+                "rock",
+                "rock"
+            ]
+        },
+        {
+            "id": 1,
+            "color": "red",
+            "resources": [
+                "fruit",
+                "animal"
+            ]
+        },
+        {
+            "id": 68,
+            "color": "green"
         }
     ]
 }
