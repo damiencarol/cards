@@ -210,7 +210,16 @@ def test_evaluate_cards_random2_with_sanct():
     board=[33, 27, 11, 14, 40, 20, 43, 4]
     sancts=[11]
     evaluate_params(board, sancts, 23)
-    
+
+def test_evaluate_cards_random3_with_sanct():
+    board=[29, 68, 44, 22, 59, 17, 38, 2]
+    sancts=[1, 32, 35]
+    evaluate_params(board, sancts, 32)
+
+def test_evaluate_cards_random3_with_sanct_plus():
+    board=[29, 68, 44, 22, 59, 17, 38, 2]
+    sancts=[1, 32, 35, 11]
+    evaluate_params(board, sancts, 53)
 
 def evaluate_params(board, sanctuaries, points):
     db = load_data("data.json")
@@ -218,14 +227,31 @@ def evaluate_params(board, sanctuaries, points):
     sanctuaries_data = generate_sanctuaries_data(db)
     assert points == logic.evaluate_points_board(card_data, board, sanctuaries_data, sanctuaries)
 
-def test_complete_game():
+def test_complete_game_2_players():
+    complete_game(2)
+def test_complete_game_3_players():
+    complete_game(3)
+def test_complete_game_4_players():
+    complete_game(4)
+def test_complete_game_5_players():
+    complete_game(5)
+#def test_complete_game_6_players():
+#    complete_game(6)
+
+def complete_game(nb_players=4):
     db = load_data("data.json")
     card_data = generate_card_data(db)
     sanctuaries_data = generate_sanctuaries_data(db)
     
-    ret = game.create_new_game(4)
+    ret = game.create_new_game(nb_players)
     ret = game.init_game(ret)
 
+    i = 10000
     while ret["state"] != game.STATE_END:
         mvs = logic.get_possible_move(ret)
         logic.make_move(ret, mvs[0], card_data, sanctuaries_data)
+        # prevent infinite loop
+        if i < 0:
+            raise ValueError("Infinite loop?")
+        else:
+            i = i - 1
