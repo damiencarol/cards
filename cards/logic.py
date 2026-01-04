@@ -20,27 +20,32 @@ def get_possible_move(game_data):
     elif game_data["state"] == game.STATE_PLAYER_TURNS:
         ret = []
         player = game_data["current_player"]
-        # for each card in the central_board
-        for card in game_data["central_board"]:
-            ret.append({
-                "player": player,
-                "card": card,
-                "source": "central_board",
-                "target": "hand",
-            })
-        # for each sanctuary in the select area (pre_sanctuary)
-        # the current player can play it
-        for card in game_data["pre_sanctuaries"]:
-            ret.append({
-                "player": player,
-                "card": card,
-                "source": "pre_sanctuary",
-                "target": "sanctuaries",
-            })
+        # first we test if there is sanctuarires to choose
+        # if yes, it shortcut to selection in the central board
+        if len(game_data["pre_sanctuaries"]):
+            # for each sanctuary in the select area (pre_sanctuary)
+            # the current player can play it
+            for card in game_data["pre_sanctuaries"]:
+                ret.append({
+                    "player": player,
+                    "card": card,
+                    "source": "pre_sanctuaries",
+                    "target": "sanctuaries",
+                })
+        else: # if not we rare in the select a card from the central board sub-phase
+            # for each card in the central_board
+            for card in game_data["central_board"]:
+                ret.append({
+                    "player": player,
+                    "card": card,
+                    "source": "central_board",
+                    "target": "hand",
+                })
         return ret
     raise ValueError(f"state not implemented: {game_data['state']}")
 
 def make_move(game_data, move, card_data, sanctuaries_data):
+    print(f"***MAKE_MOVE state:{game.convert_num_to_state(game_data["state"])}    move:{move}")
     if game.STATE_CHOOSING == game_data["state"]:
         player_id = move["player"]
         #assert player == game_data["current_player"]
@@ -69,9 +74,11 @@ def make_move(game_data, move, card_data, sanctuaries_data):
         player_id = move["player"]
         # check that it's the good player turn
         if player_id != game_data["current_player"]: raise ValueError(f"wrong player try to choose a card")
+        
         # manage case for chossing a card from central board
         if move['source'] == "central_board":
-            
+            if len(game_data["pre_sanctuaries"]): raise ValueError("player try to continue his turn but need to select a sanctuary first")
+
             # take card in hand
             print(f"before {game_data["players"][move['player']]}")
             game_data["central_board"].remove(move['card'])
@@ -101,9 +108,16 @@ def make_move(game_data, move, card_data, sanctuaries_data):
                 for i in range(0, game_data["nb_players"] + 1):
                     game_data = game.fill_central_board_one_time(game_data)
             return
-
-        # FIXME implement choose sanctuary
-        raise ValueError("Not implemented")
+        elif move['source'] == "pre_sanctuaries" and move["target"] == "sanctuaries": # player want to add a sanctuaries to their global board
+            # check that the move is legal
+            if move["card"] not in game_data["pre_sanctuaries"]: raise ValueError("player try to cheat sanctuary selection")
+            # first add the card to the player sanctuaries
+            game_data["players"][player_id]["sanctuaries"].append(move["card"])
+            # then remove sanctuaries to the "off" stack
+            while len(game_data["pre_sanctuaries"]):
+                id = game_data["pre_sanctuaries"].pop()
+                game_data["off_sanctuaries"].append(id)
+            return
     raise ValueError("Not implemented")
 
 def switch_player_for_player_turns_phase(gamedata, card_data, sanctuaries_data):
@@ -116,12 +130,16 @@ def switch_player_for_player_turns_phase(gamedata, card_data, sanctuaries_data):
             print(f"check player selection for first {gamedata["players"][i]["pre_board"][0]}")
             if min_card_id==gamedata["players"][i]["pre_board"][0]:
                 gamedata["current_player"] = i
-    print(f"the player with the lower card is {gamedata['current_player']}")                      
+    player = gamedata['current_player']
+    print(f"the player with the lower card is {player}")                      
     # FIXME add sanctuary selection fill up
     # 
     # 1. get stats from player
     # 2. fill the pre_sanctuaries
-    if gamedata["current_player"] != -1:
+    if gamedata["current_player"] != -1 and (
+    (len(gamedata["players"][player]["board"]) + len(gamedata["players"][player]["pre_board"]))>1) and (
+    gamedata["players"][player]["pre_board"][0] > gamedata["players"][player]["board"][-1]):
+        print("switch to player detected, filling the santuaries")
         player = gamedata["current_player"]
         moving_stats = {}
         for sanct_id in gamedata["players"][player]["sanctuaries"]:
@@ -129,7 +147,10 @@ def switch_player_for_player_turns_phase(gamedata, card_data, sanctuaries_data):
         for card_id in gamedata["players"][player]["board"]:
             moving_stats = get_stats_from_card(card_data, card_id, moving_stats)
         moving_stats = get_stats_from_card(card_data, gamedata["players"][player]["pre_board"][0], moving_stats)
-        print(f"number of map + 1 = {moving_stats.get("number_of_map",0)+1}")
+        nb_sanctuaries = moving_stats.get("number_of_map",0)+1
+        print(f"number of map + 1 = {nb_sanctuaries}")
+        for i in range(0,nb_sanctuaries):
+            game.fill_pre_sanctuaries_one_time(gamedata)
     return gamedata["current_player"]
 
 def all_player_have_preboard(gamedata):

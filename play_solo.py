@@ -34,6 +34,8 @@ while not should_exit:
         print(f"current player: {game_data["current_player"]}")
         print(f"number of players: {len(game_data["players"])}")
         print(f"central board : {game_data["central_board"]}")
+        #if ()
+        print(f"select sanctuaries : {game_data["pre_sanctuaries"]}")
         print(f"your hand     : {game_data["players"][0]["hand"]}")
         print(f"your board     : {game_data["players"][0]["board"]}")
         print(f"your pre-board : {game_data["players"][0]["pre_board"]}")
@@ -57,7 +59,9 @@ while not should_exit:
                         'card': card_wanted,
                         'source': 'hand',
                         'target': 'pre_board',
-                    })
+                    },
+                    card_data,
+                    sanctuaries_data)
             else: raise ValueError("not implemented")
         else:
             print("you need to choose a card for your hand from central board")
@@ -76,8 +80,18 @@ while not should_exit:
                         'card': card_wanted,
                         'source': 'central_board',
                         'target': 'hand',
+                    },
+                    card_data,
+                    sanctuaries_data)
+            elif "s" == inp:
+                inp = input("playing sanctuary, type the number: ")
+                card_wanted = int(inp)
+                make_move(game_data, {
+                        "player": 0, # in solo the player is 0
+                        'card': card_wanted,
+                        'source': 'pre_sanctuaries',
+                        'target': 'sanctuaries',
                     })
-
 
     else:
         print(f"***AI move {mvs[0]}")
@@ -85,7 +99,10 @@ while not should_exit:
 
 scores = []
 for i in range(0, nb_players):
-    scores.append(evaluate_points_board(card_data, game_data["players"][i]["board"]))
+    scores.append(evaluate_points_board(
+        card_data, game_data["players"][i]["board"],
+        sanctuaries_data, game_data["players"][i]["sanctuaries"]
+        ))
 
 
 print(f"your score so far: {scores[0]}")

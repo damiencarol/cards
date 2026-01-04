@@ -15,6 +15,7 @@ def create_new_game(nb_players=4):
         "state": STATE_CHOOSING,
         "pre_sanctuaries": [], # place to select card to play
         "sanctuaries": list(range(1, 46)),  # 45 sanctuaries
+        "off_sanctuaries": [],
         "territories": list(range(1, 69)),  # 68 cards
         "off_territories": [],
         "central_board": [],
@@ -35,6 +36,18 @@ def fill_central_board_one_time(game_data):
     game_data["central_board"].append(card)
     return game_data
 
+def fill_pre_sanctuaries_one_time(game_data):
+    # if the stanctuary stack is empty, add the "off" stack in it
+    if len(game_data["sanctuaries"]) == 0:
+        game_data["sanctuaries"].extend(game_data["off_sanctuaries"])
+        game_data["off_sanctuaries"].clear()
+        print(f"shuffle {game_data["sanctuaries"]} off: {game_data["off_sanctuaries"]}")
+    # choose a random one
+    i = random.randint(0, len(game_data["sanctuaries"]) - 1)
+    card = game_data["sanctuaries"][i]
+    game_data["sanctuaries"].remove(card)
+    game_data["pre_sanctuaries"].append(card)
+    return game_data
 
 def init_game(game_data):
     # print(game_data)
