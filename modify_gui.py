@@ -50,9 +50,9 @@ image_animal_big = pygame.image.load("img/animal.png")
 image_animal = pygame.transform.scale_by(image_animal_big, 0.75)
 #ballrect = ball.get_rect()
 
-image_sun = pygame.image.load("sun.png")
+image_sun = pygame.image.load("img/sun.png")
 image_sun_big = pygame.transform.scale_by(image_sun, 2)
-image_moon = pygame.image.load("moon.png")
+image_moon = pygame.image.load("img/moon.png")
 image_moon_big = pygame.transform.scale_by(image_moon, 2)
 
 font = pygame.font.SysFont("comicsansms", 32)
@@ -71,9 +71,9 @@ coord_y = 50
 card_width = 150
 card_height = 150
 
-current_card = 33 # 54
+current_card = 68 # 54
 
-debug = True
+debug = False
 
 should_continue = True
 while should_continue:
@@ -124,22 +124,19 @@ while should_continue:
                 else:
                     card["color"] = "green"
             if "r" == key_name:
-                if card.get("resources") is None:
-                    card["resources"] = ["rock"]
-                elif len(card["resources"]) == 0:
+                if not card.get("resources"):
                     card["resources"] = ["rock"]
                 elif "rock" == card["resources"][0]:
                     card["resources"][0] = "fruit"
                 elif "fruit" == card["resources"][0]:
                     card["resources"][0] = "animal"
                 elif "animal" == card["resources"][0]:
-                    card["resources"].remove("animal")
-                else:
-                    card["resources"][0] = "rock"
+                    if len(card["resources"]) > 1:
+                        card["resources"][0] = "rock"
+                    else:
+                        card["resources"].pop()
             if "t" == key_name:
-                if card.get("resources") is None:
-                    card["resources"] = ["rock", "rock"]
-                elif len(card["resources"]) == 0:
+                if not card.get("resources"):
                     card["resources"] = ["rock", "rock"]
                 elif len(card["resources"]) < 2:
                     card["resources"].append("rock")
@@ -148,9 +145,10 @@ while should_continue:
                 elif "fruit" == card["resources"][1]:
                     card["resources"][1] = "animal"
                 elif "animal" == card["resources"][1]:
-                    card["resources"].remove("animal")
-                else:
-                    card["resources"][1] = "rock"
+                    if len(card["resources"]) == 1:
+                        card["resources"].pop()
+                    else:
+                        card["resources"][1] = "rock"
 
             if "[*]" == key_name:
                 if "power" not in card:
@@ -208,6 +206,16 @@ while should_continue:
                         if "rock" == card["requirements"][2]: card["requirements"][2] = "animal"
                         elif "animal" == card["requirements"][2]: card["requirements"][2] = "fruit"
                         elif "fruit" == card["requirements"][2]:
+                            card["requirements"].pop()
+            if "[3]" == key_name:
+                if "requirements" not in card:
+                    card["requirements"] = ["rock"]
+                else:
+                    if len(card["requirements"])==3: card["requirements"].append("rock")
+                    elif len(card["requirements"])==4:
+                        if "rock" == card["requirements"][3]: card["requirements"][3] = "animal"
+                        elif "animal" == card["requirements"][3]: card["requirements"][3] = "fruit"
+                        elif "fruit" == card["requirements"][3]:
                             card["requirements"].pop()
 
             if "s" == key_name:
@@ -288,7 +296,7 @@ while should_continue:
         if len(card.get("resources", []))>1:
             if "fruit" == card["resources"][1]: image_r1 = image_fruit
             elif "rock" == card["resources"][1]: image_r1 = image_rock
-            elif "animal" == card["resources"][1]: image_r0 = image_animal
+            elif "animal" == card["resources"][1]: image_r1 = image_animal
         else:
             image_r1 = None
 
@@ -354,38 +362,15 @@ while should_continue:
                     pygame.draw.line(screen, (255,125,125), (c_x, y_calc - 16), (c_x, y_calc+16))
                     pygame.draw.line(screen, (255,125,125), (c_x -16, y_calc), (c_x + 16, y_calc))
             
-            if len(card.get("requirements", []))>0:
-                req1_x = coord_x + card_width - 8 - 16*1
+            for k in range(0,len(card.get("requirements", []))):
+                req1_x = coord_x + card_width - 8 - 16*(1+k)
                 req1_y = coord_y + card_width//2 - 8
                 img_req = image_unk_small
-                if "rock" == card["requirements"][0]: img_req = image_rock
-                if "animal" == card["requirements"][0]: img_req = image_animal
-                if "fruit" == card["requirements"][0]: img_req = image_fruit
+                if "rock" == card["requirements"][k]: img_req = image_rock
+                if "animal" == card["requirements"][k]: img_req = image_animal
+                if "fruit" == card["requirements"][k]: img_req = image_fruit
                 screen.blit(img_req, (req1_x-8, req1_y-8))
                 if debug: draw_cross(screen, req1_x, req1_y)
-           
-            if len(card.get("requirements", []))>1:
-                req2_x = coord_x + card_width - 8 - 16*2
-                req2_y = coord_y + card_width//2 - 8
-                img_req = image_unk_small
-                if "rock" == card["requirements"][1]: img_req = image_rock
-                if "animal" == card["requirements"][1]: img_req = image_animal
-                if "fruit" == card["requirements"][1]: img_req = image_fruit
-                screen.blit(img_req, (req2_x-8, req2_y-8))
-
-                if debug: draw_cross(screen, req2_x, req2_y)
-
-            if len(card.get("requirements", []))>2:
-                req3_x = coord_x + card_width - 8 - 16*3
-                req3_y = coord_y + card_width//2 - 8
-                img_req3 = image_unk_small
-                if "rock" == card["requirements"][2]: img_req3 = image_rock
-                if "animal" == card["requirements"][2]: img_req3 = image_animal
-                if "fruit" == card["requirements"][2]: img_req3 = image_fruit
-                screen.blit(img_req3, (req3_x-8, req3_y-8))
-
-                if debug: draw_cross(screen, req3_x, req3_y)
-                    
 
 
     screen.blit(text_card_id, (
